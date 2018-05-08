@@ -9,17 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print("\(point(n:3))")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    func point (n:Int){
+        var sum = 1
+        var mArray = Array(repeating: Array(repeating: 0, count: n), count: n)
+        var nArray = Array(repeating: Array(repeating: 0, count: n), count: n)
+        for x in mArray.indices {
+            for y in mArray.indices {
+                mArray[y] = [x,y]
+                nArray[y] = [sum]
+                sum = sum + 1
+            }
+            print("Coordenadas: \(mArray)")
+            print("Número: \(nArray)")
+            print("---------------------------")
+        }
+        print("Número de salida: \(nArray.last!)")
+        print("Coordenadas de salida: \(mArray.last!)")
 
-
+    }
 }
 
